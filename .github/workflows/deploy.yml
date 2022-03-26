@@ -1,6 +1,3 @@
-env:
-  deployToRepo: AREA44
-
 name: Github Pages Astro CI
 
 on:
@@ -32,8 +29,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'dist'
-          destination-github-username: ${{ github.actor }}
-          destination-repository-name: ${{ env.deployToRepo }}
-          user-email: ${{ env.githubEmail }}
+          destination-github-username: 'AREA44'
+          destination-repository-name: 'astro-firstweb'
           commit-message: Deploy ORIGIN_COMMIT
           target-branch: gh-pages
