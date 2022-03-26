@@ -9,7 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
