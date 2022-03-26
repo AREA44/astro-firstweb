@@ -1,3 +1,6 @@
+env:
+  deployToRepo: AREA44
+
 name: Github Pages Astro CI
 
 on:
