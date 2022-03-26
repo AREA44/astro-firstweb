@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  name: Build
   deploy:
     runs-on: ubuntu-latest
 
@@ -23,13 +24,9 @@ jobs:
           npm run build
           touch ./dist/.nojekyll
 
-      - name: Push to pages repo
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          source-directory: 'dist'
-          destination-github-username: 'AREA44'
-          destination-repository-name: 'astro-firstweb'
-          commit-message: Deploy ORIGIN_COMMIT
-          target-branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
