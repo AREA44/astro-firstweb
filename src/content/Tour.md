@@ -5,7 +5,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 ├── public/
 │   ├── logo.svg
-│   └── favicon.ico
+│   └── favicon.svg
 ├── src/
 │   ├── components/
 │   │   └── Logo.astro
