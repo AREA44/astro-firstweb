@@ -3,7 +3,6 @@
 ## 🐳 Preview
 
 - [GitHub Pages](https://area44.github.io/astro-firstweb/)
-- [Netlify](https://astro-firstweb.netlify.app)
 
 ## 🧞 Commands
 
