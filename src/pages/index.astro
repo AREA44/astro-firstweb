@@ -3,22 +3,21 @@ import {Content as TourContent} from '../content/Tour.md';
 import Logo from '../components/Logo.astro';
 import '../styles/global.css';
 import '../styles/home.css';
-/* ASTRO:COMPONENT_IMPORTS */
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let title = 'Astro FirstWeb';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+let description = "This is an astro starter";
+let banner = "https://raw.githubusercontent.com/AREA44/.github/main/images/banner.jpg";
+let url = "https://github.com/AREA44";
 ---
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<title>{title}</title>
+	<meta content={title} property="og:title" />
+	<meta content={description} name="description" property="og:description" />
+	<meta content={banner} property="og:image" />
+	<meta content={url} property="og:url" />
 
 	<link rel="icon" type="image/x-icon" href="./favicon.svg" />
 
@@ -37,14 +36,6 @@ let title = 'Astro FirstWeb';
 			gap: 1em;
 			max-width: 70ch;
 		}
-		.banner {
-			text-align: center;
-			font-size: 1.2rem;
-			background: var(--color-light);
-			padding: 1em 1.5em;
-			padding-left: 0.75em;
-			border-radius: 4px;
-		}
 	</style>
 	<style is:global>
 		pre {
@@ -52,6 +43,7 @@ let title = 'Astro FirstWeb';
 		}
 	</style>
 </head>
+
 <body>
 	<main>
 		<header>
@@ -64,19 +56,6 @@ let title = 'Astro FirstWeb';
 		<article>
 			<TourContent />
 		</article>
-
-		<!--
-
-		You can also use imported framework components directly in your markup!
-		
-		Note: by default, these components are NOT interactive on the client.
-		The `client:visible` directive tells Astro to make it interactive.
-		
-		See https://docs.astro.build/core-concepts/component-hydration/ 
-
-		-->
-
-		<!-- ASTRO:COMPONENT_MARKUP -->
 	</main>
 </body>
 </html>
